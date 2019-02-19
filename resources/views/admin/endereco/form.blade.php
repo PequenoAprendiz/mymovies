@@ -1,7 +1,7 @@
-<div class="form-group {{ $errors->has('endereÃ§o') ? 'has-error' : ''}}">
-    {!! Form::label('endereÃ§o', 'Endereã§o', ['class' => 'control-label']) !!}
-    {!! Form::text('endereÃ§o', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-    {!! $errors->first('endereÃ§o', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('endereço') ? 'has-error' : ''}}">
+    {!! Form::label('endereço', 'Endere?o', ['class' => 'control-label']) !!}
+    {!! Form::text('endereço', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+    {!! $errors->first('endereço', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('id_pessoa') ? 'has-error' : ''}}">
     {!! Form::label('id_pessoa', 'Id Pessoa', ['class' => 'control-label']) !!}

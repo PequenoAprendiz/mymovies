@@ -23,7 +23,7 @@
                 </li>
                 <br>
                 <li role="presentation">
-                    <a href="{{ url('/') }}"> Sobre </a>
+                    <a href="{{ url('/sobre') }}"> Sobre </a>
                 </li>
                 </br>
             </ul>

@@ -24,8 +24,8 @@ class EnderecoController extends Controller
 //                ->orWhere('id_pessoa', 'LIKE', "%$keyword%")
 //                ->latest()->paginate($perPage);
             $endereco = DB::table('enderecos')
-                ->join('pessoas', 'pessoas.id', '=', 'enderecos.id_pessoa')
                 ->select('enderecos.endereço','pessoas.nome')
+                ->leftjoin('pessoas', 'pessoas.id', '=', 'enderecos.id_pessoa')
                 ->get();
         } else {
             $endereco = Endereco::latest()->paginate($perPage);

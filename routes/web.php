@@ -13,12 +13,10 @@
 
 
 Route::group(['middleware' => 'web'], function () {
-    Route::get('/', 'HomeController@index'); /*sempre que acessar o site carregará a pagina Home*/
+    Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index')->name('home');
     Auth::routes();
     Route::resource('admin/pessoa', 'Admin\\PessoaController');
     Route::resource('admin/endereco', 'Admin\\EnderecoController');
     Route::get('/sobre', 'SobreController@index')->name('sobre');
 });
-
-
