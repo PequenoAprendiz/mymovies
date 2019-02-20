@@ -27,5 +27,6 @@ class Pessoa extends Model
      */
     protected $fillable = ['nome', 'sobrenome', 'titulacao', 'cpf', 'rg', 'id_user'];
 
+
     
 }

@@ -7,13 +7,13 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Pessoa</div>
+                    <div class="card-header">Filme_favorito</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/pessoa/create') }}" class="btn btn-success btn-sm" title="Add New Pessoa">
+                        <a href="{{ url('/admin/filme_favorito/create') }}" class="btn btn-success btn-sm" title="Add New Filme_favorito">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
-                        {!! Form::open(['method' => 'GET', 'url' => '/admin/pessoa', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
+                        {!! Form::open(['method' => 'GET', 'url' => '/admin/filme_favorito', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
                             <span class="input-group-append">
@@ -30,26 +30,26 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nome</th><th>Sobrenome</th><th>Titulacao</th><th>Actions</th>
+                                        <th>#</th><th>Titulo</th><th>Ano</th><th>Diretor</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($pessoa as $item)
+                                @foreach($filme_favorito as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nome }}</td><td>{{ $item->sobrenome }}</td><td>{{ $item->titulacao }}</td>
+                                        <td>{{ $item->titulo }}</td><td>{{ $item->ano }}</td><td>{{ $item->diretor }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/pessoa/' . $item->id) }}" title="View Pessoa"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/pessoa/' . $item->id . '/edit') }}" title="Edit Pessoa"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/admin/filme_favorito/' . $item->id) }}" title="View Filme_favorito"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/admin/filme_favorito/' . $item->id . '/edit') }}" title="Edit Filme_favorito"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/admin/pessoa', $item->id],
+                                                'url' => ['/admin/filme_favorito', $item->id],
                                                 'style' => 'display:inline'
                                             ]) !!}
                                                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-sm',
-                                                        'title' => 'Delete Pessoa',
+                                                        'title' => 'Delete Filme_favorito',
                                                         'onclick'=>'return confirm("Confirm delete?")'
                                                 )) !!}
                                             {!! Form::close() !!}
@@ -58,7 +58,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $pessoa->appends(['search' => Request::get('search')])->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $filme_favorito->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
                     </div>

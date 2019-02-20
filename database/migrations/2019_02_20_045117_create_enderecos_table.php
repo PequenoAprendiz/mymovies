@@ -15,9 +15,9 @@ class CreateEnderecosTable extends Migration
         Schema::create('enderecos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('endereço')->nullable();
+            $table->string('endereco')->nullable();
             $table->integer('id_pessoa')->unsigned();
-            $table->foreign('id_pessoa')->references('id')->on('pessoas') ->onDelete('cascade');
+            $table->foreign('id_pessoa')->references('id')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }

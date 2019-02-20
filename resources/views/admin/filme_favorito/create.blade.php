@@ -7,9 +7,9 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit Endereco #{{ $endereco->id }}</div>
+                    <div class="card-header">Create New Filme_favorito</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/endereco') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/filme_favorito') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -21,14 +21,9 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($endereco, [
-                            'method' => 'PATCH',
-                            'url' => ['/admin/endereco', $endereco->id],
-                            'class' => 'form-horizontal',
-                            'files' => true
-                        ]) !!}
+                        {!! Form::open(['url' => '/admin/filme_favorito', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                        @include ('admin.endereco.form', ['formMode' => 'edit'])
+                        @include ('admin.filme_favorito.form', ['formMode' => 'create'])
 
                         {!! Form::close() !!}
 

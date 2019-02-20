@@ -11,15 +11,15 @@
                 </li>
                 <br>
                 <li role="presentation">
-                    <a href="{{ url('/') }}"> Filmes </a>
-                </li>
-                <br>
-                <li role="presentation">
                     <a href="{{ url('admin/pessoa') }}"> Pessoas </a>
                 </li>
                 <br>
                 <li role="presentation">
                     <a href="{{ url('admin/endereco') }}"> Endereços </a>
+                </li>
+                <br>
+                <li role="presentation">
+                    <a href="{{ url('admin/filme_favorito') }}"> Filmes </a>
                 </li>
                 <br>
                 <li role="presentation">

@@ -175,7 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\DynamicPessoaProvider::class, //provider para listar as pessoas de forma dinamica no firmulário de cadastro de endereço
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],

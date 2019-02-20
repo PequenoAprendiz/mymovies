@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Endereco extends Model
+class Filme_favorito extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'enderecos';
+    protected $table = 'filmes_favoritos';
 
     /**
     * The database primary key value.
@@ -25,6 +25,7 @@ class Endereco extends Model
      *
      * @var array
      */
-    protected $fillable = ['endereco', 'id_pessoa'];
+    protected $fillable = ['titulo', 'ano', 'diretor', 'id_pessoa'];
 
+    
 }

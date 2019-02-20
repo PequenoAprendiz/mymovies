@@ -3,3 +3,7 @@ php artisan crud:generate Pessoa --fields="nome#string; sobrenome#string;  titul
 
 php artisan crud:generate Endereco --fields="endereço#string; id_pessoa#number;" --foreign-keys="id_pessoa#id#Pessoa#cascade" --view-path=admin  --controller-namespace=Admin
 	"tive que alterar o o atributo que seria chave estrangeira, via model"
+
+
+php artisan crud:generate Filmes_favoritos --fields="titulo#string; ano#string;  diretor#string; id_pessoa#number;" --foreign-keys="id_pessoa#id#Pessoa#cascade" --view-path=admin  --controller-namespace=Admin  --route-group=admin --form-helper=html --form-helper=laravelcollective
+

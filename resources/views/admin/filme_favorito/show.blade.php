@@ -7,20 +7,20 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Endereco {{ $endereco->id }}</div>
+                    <div class="card-header">Filme_favorito {{ $filme_favorito->id }}</div>
                     <div class="card-body">
 
-                        <a href="{{ url('/admin/endereco') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/admin/endereco/' . $endereco->id . '/edit') }}" title="Edit Endereco"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/admin/filme_favorito') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/filme_favorito/' . $filme_favorito->id . '/edit') }}" title="Edit Filme_favorito"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['admin/endereco', $endereco->id],
+                            'url' => ['admin/filme_favorito', $filme_favorito->id],
                             'style' => 'display:inline'
                         ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
                                     'type' => 'submit',
                                     'class' => 'btn btn-danger btn-sm',
-                                    'title' => 'Delete Endereco',
+                                    'title' => 'Delete Filme_favorito',
                                     'onclick'=>'return confirm("Confirm delete?")'
                             ))!!}
                         {!! Form::close() !!}
@@ -31,9 +31,9 @@
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <th>ID</th><td>{{ $endereco->id }}</td>
+                                        <th>ID</th><td>{{ $filme_favorito->id }}</td>
                                     </tr>
-                                    <tr><th> Endereço </th><td> {{ $endereco->endereço }} </td></tr><tr><th> Pessoa </th><td> {{ $endereco->nome_pessoa }} </td></tr>
+                                    <tr><th> Titulo </th><td> {{ $filme_favorito->titulo }} </td></tr><tr><th> Ano </th><td> {{ $filme_favorito->ano }} </td></tr><tr><th> Diretor </th><td> {{ $filme_favorito->diretor }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

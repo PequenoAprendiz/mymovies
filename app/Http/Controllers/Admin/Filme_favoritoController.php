@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Endereco;
-use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\Pessoa;
+use App\Http\Controllers\Controller;
+
+use App\Filme_favorito;
 use Illuminate\Http\Request;
 
-
-class EnderecoController extends Controller
+class Filme_favoritoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,20 +18,20 @@ class EnderecoController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 10;
+        $perPage = 25;
 
         if (!empty($keyword)) {
-            $endereco = Endereco::where('endereço', 'LIKE', "%$keyword%")
+            $filme_favorito = Filme_favorito::where('titulo', 'LIKE', "%$keyword%")
+                ->orWhere('ano', 'LIKE', "%$keyword%")
+                ->orWhere('diretor', 'LIKE', "%$keyword%")
                 ->orWhere('id_pessoa', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $endereco = Endereco::latest()->paginate($perPage);
+            $filme_favorito = Filme_favorito::latest()->paginate($perPage);
         }
 
-        return view('admin.endereco.index', compact('endereco'));
+        return view('admin.filme_favorito.index', compact('filme_favorito'));
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -41,9 +40,7 @@ class EnderecoController extends Controller
      */
     public function create()
     {
-        $pessoas = Pessoa::pluck('nome', 'id')->toArray();
-
-        return view('admin.endereco.create', ['pessoas'=>$pessoas]);
+        return view('admin.filme_favorito.create');
     }
 
     /**
@@ -55,77 +52,72 @@ class EnderecoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'endereco'  => 'min:4',
-        ]);
-
+        
         $requestData = $request->all();
+        
+        Filme_favorito::create($requestData);
 
-        Endereco::create($requestData);
-
-        return redirect('admin/endereco')->with('flash_message', 'Endereco added!');
+        return redirect('admin/filme_favorito')->with('flash_message', 'Filme_favorito added!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      *
      * @return \Illuminate\View\View
      */
     public function show($id)
     {
-        $endereco = Endereco::findOrFail($id);
+        $filme_favorito = Filme_favorito::findOrFail($id);
 
-        return view('admin.endereco.show', compact('endereco'));
+        return view('admin.filme_favorito.show', compact('filme_favorito'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      *
      * @return \Illuminate\View\View
      */
     public function edit($id)
     {
-        $endereco = Endereco::findOrFail($id);
+        $filme_favorito = Filme_favorito::findOrFail($id);
 
-        return view('admin.endereco.edit', compact('endereco'));
+        return view('admin.filme_favorito.edit', compact('filme_favorito'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  int  $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'endereco' => 'min:4'
-        ]);
+        
         $requestData = $request->all();
+        
+        $filme_favorito = Filme_favorito::findOrFail($id);
+        $filme_favorito->update($requestData);
 
-        $endereco = Endereco::findOrFail($id);
-        $endereco->update($requestData);
-
-        return redirect('admin/endereco')->with('flash_message', 'Endereco updated!');
+        return redirect('admin/filme_favorito')->with('flash_message', 'Filme_favorito updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        Endereco::destroy($id);
+        Filme_favorito::destroy($id);
 
-        return redirect('admin/endereco')->with('flash_message', 'Endereco deleted!');
+        return redirect('admin/filme_favorito')->with('flash_message', 'Filme_favorito deleted!');
     }
 }

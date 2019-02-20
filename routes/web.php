@@ -19,4 +19,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('admin/pessoa', 'Admin\\PessoaController');
     Route::resource('admin/endereco', 'Admin\\EnderecoController');
     Route::get('/sobre', 'SobreController@index')->name('sobre');
+    Route::resource('admin/filme_favorito', 'Admin\\Filme_favoritoController');
 });
+
