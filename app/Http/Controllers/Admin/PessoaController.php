@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 use App\Pessoa;
@@ -73,11 +74,29 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request, [
+            'nome'      => 'required',
+            'sobrenome' => 'required',
+            'titulacao' => 'required',
+            'cpf'       => 'required|min:11|max:11',
+            'rg'        => 'required|min:10|max:10'],
+            [
+                'nome.required'      => 'Preencha o campo Nome',
+                'sobrenome.required' => 'Preencha o campo Sobrenome',
+                'titulacao.required' => 'Preencha o campo Titulação',
+                'cpf.required'       => 'Preencha o campo Cpf',
+                'cpf.min'            => 'Cpf deve conter 11 digitos',
+                'cpf.max'            => 'Cpf deve conter 11 digitos',
+                'rg.required'        => 'Preencha o campo Rg',
+                'rg.min'             => 'Rg deve conter 10 digitos',
+                'rg.max'             => 'Rg deve conter 10 digitos',
+
+            ]);
         $requestData = $request->all();
         
         Pessoa::create($requestData);
 
+        //Session::flash('mensagem_sucesso', 'Pessoa cadastrada com sucesso!');
         return redirect('admin/pessoa')->with('flash_message', 'Pessoa added!');
     }
 

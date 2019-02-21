@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Pessoa</div>
+                    <div class="card-header">Pessoas</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/pessoa/create') }}" class="btn btn-success btn-sm" title="Add New Pessoa">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -30,14 +30,13 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nome</th><th>Sobrenome</th><th>Titulacao</th><th>Actions</th>
+                                        <th>#</th><th>Nome</th><th>Sobrenome</th><th>Titulacao</th><th>Cpf</th><th>Rg</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($pessoa as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nome }}</td><td>{{ $item->sobrenome }}</td><td>{{ $item->titulacao }}</td>
+                                        <td>{{ $item->id }}</td><td>{{ $item->nome }}</td><td>{{ $item->sobrenome }}</td><td>{{ $item->titulacao }}</td><td>{{ $item->cpf }}</td><td>{{ $item->rg }}</td>
                                         <td>
                                             <a href="{{ url('/admin/pessoa/' . $item->id) }}" title="View Pessoa"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/pessoa/' . $item->id . '/edit') }}" title="Edit Pessoa"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

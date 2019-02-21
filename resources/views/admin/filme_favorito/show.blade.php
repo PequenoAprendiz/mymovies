@@ -33,7 +33,14 @@
                                     <tr>
                                         <th>ID</th><td>{{ $filme_favorito->id }}</td>
                                     </tr>
-                                    <tr><th> Titulo </th><td> {{ $filme_favorito->titulo }} </td></tr><tr><th> Ano </th><td> {{ $filme_favorito->ano }} </td></tr><tr><th> Diretor </th><td> {{ $filme_favorito->diretor }} </td></tr>
+                                    <tr><th> Titulo </th><td> {{ $filme_favorito->titulo }} </td></tr><tr><th> Ano </th><td> {{ $filme_favorito->ano }} </td></tr><tr><th> Diretor </th><td> {{ $filme_favorito->diretor }} </td>
+                                        <th> Pessoa </th>
+                                        @foreach($pessoa as $p)
+                                            @if($filme_favorito->id_pessoa == $p->id)
+                                              <td> {{ $filme_favorito->diretor }} </td>
+                                                <td>{{ $p->nome }}</td>
+                                            @endif
+                                        @endforeach</tr></tr>
                                 </tbody>
                             </table>
                         </div>

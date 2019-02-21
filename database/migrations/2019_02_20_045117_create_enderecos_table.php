@@ -16,10 +16,11 @@ class CreateEnderecosTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('endereco')->nullable();
-            $table->integer('id_pessoa')->unsigned();
-            $table->foreign('id_pessoa')->references('id')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_pessoa')->unsigned()->nullable();
+            $table->foreign('id_pessoa')->references('id')->on('pessoas')->onDelete('cascade')->onUpdate('cascade');
 
         });
+
     }
 
     /**

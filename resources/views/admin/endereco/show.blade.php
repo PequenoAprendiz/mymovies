@@ -33,7 +33,12 @@
                                     <tr>
                                         <th>ID</th><td>{{ $endereco->id }}</td>
                                     </tr>
-                                    <tr><th> Endereço </th><td> {{ $endereco->endereço }} </td></tr><tr><th> Pessoa </th><td> {{ $endereco->nome_pessoa }} </td></tr>
+                                    <tr><th> Endereço </th><td> {{ $endereco->endereco }} </td></tr><tr><th> Pessoa </th>
+                                        @foreach($pessoa as $p)
+                                            @if($endereco->id_pessoa == $p->id)
+                                                <td>{{ $p->nome }}</td>
+                                            @endif
+                                        @endforeach</tr>
                                 </tbody>
                             </table>
                         </div>

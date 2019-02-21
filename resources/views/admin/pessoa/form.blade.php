@@ -23,12 +23,6 @@
 {!! Form::text('rg', null,['class' => 'form-control', 'required' => 'required']) !!}
 {!! $errors->first('rg', '<p class="help-block">:message</p>') !!}
 </div>
-{{--<div class="form-group {{ $errors->has('id_user') ? 'has-error' : ''}}">--}}
-{{--{!! Form::label('id_user', 'Id User', ['class' => 'control-label']) !!}--}}
-{{--{!! Form::number('id_user', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}--}}
-{{--{!! $errors->first('id_user', '<p class="help-block">:message</p>') !!}--}}
-{{--</div>--}}
-
 
 <div class="form-group">
     {!! Form::submit($formMode === 'edit' ? 'Update' : 'Create', ['class' => 'btn btn-primary']) !!}

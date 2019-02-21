@@ -22,14 +22,16 @@ class EnderecoController extends Controller
         $perPage = 10;
 
         if (!empty($keyword)) {
-            $endereco = Endereco::where('endereço', 'LIKE', "%$keyword%")
+            $endereco = Endereco::where('endereco', 'LIKE', "%$keyword%")
                 ->orWhere('id_pessoa', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $endereco = Endereco::latest()->paginate($perPage);
         }
 
-        return view('admin.endereco.index', compact('endereco'));
+        $pessoa = Pessoa::all();
+
+        return view('admin.endereco.index', compact('endereco'), ['pessoa'=>$pessoa]);
     }
 
 
@@ -76,8 +78,8 @@ class EnderecoController extends Controller
     public function show($id)
     {
         $endereco = Endereco::findOrFail($id);
-
-        return view('admin.endereco.show', compact('endereco'));
+        $pessoa = Pessoa::all();
+        return view('admin.endereco.show', compact('endereco'),  ['pessoa'=>$pessoa]);
     }
 
     /**
@@ -89,9 +91,11 @@ class EnderecoController extends Controller
      */
     public function edit($id)
     {
+        $pessoas = Pessoa::pluck('nome', 'id')->toArray();
+
         $endereco = Endereco::findOrFail($id);
 
-        return view('admin.endereco.edit', compact('endereco'));
+        return view('admin.endereco.edit', compact('endereco'), ['pessoas'=>$pessoas]);
     }
 
     /**
@@ -110,6 +114,7 @@ class EnderecoController extends Controller
         $requestData = $request->all();
 
         $endereco = Endereco::findOrFail($id);
+
         $endereco->update($requestData);
 
         return redirect('admin/endereco')->with('flash_message', 'Endereco updated!');

@@ -7,11 +7,15 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Create New Pessoa</div>
+                    <div class="card-header">Cadastrar Pessoa</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/pessoa') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                        <a href="{{ url('/admin/pessoa') }}" title="Back">
+                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                Back
+                            </button>
+                        </a>
+                        <br/>
+                        <br/>
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
@@ -20,7 +24,9 @@
                                 @endforeach
                             </ul>
                         @endif
-
+                        {{--@if(Session::has('mensagem_sucesso'))--}}
+                            {{--<div class="alert alert-sucess">{{session::get('mensagem_sucesso')}}</div>--}}
+                        {{--@endif--}}
                         {!! Form::open(['url' => '/admin/pessoa', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                         @include ('admin.pessoa.form', ['formMode' => 'create'])

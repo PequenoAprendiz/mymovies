@@ -5,8 +5,8 @@
 </div>
 <div class="form-group {{ $errors->has('pessoas') ? 'has-error' : ''}}">
     {!! Form::label('Pessoa', 'Pessoa', ['class' => 'control-label']) !!}
-    {{ Form::select('pessoas', $pessoas, null, ['class' => 'form-control', 'placeholder' => 'Escolha uma pessoa',  'required' => 'required']) }}
-    {!! $errors->first('Pessoa', '<p class="help-block">:message</p>') !!}
+    {!! Form::select('id_pessoa', $pessoas,null,['class' => 'form-control', 'placeholder' => 'Escolha uma pessoa',  'required' => 'required']) !!}
+    {!! $errors->first('pessoas', '<p class="help-block">:message</p>') !!}
 </div>
 
 

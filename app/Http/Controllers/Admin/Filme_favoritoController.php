@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Filme_favorito;
+use App\Pessoa;
 use Illuminate\Http\Request;
 
 class Filme_favoritoController extends Controller
@@ -29,8 +30,8 @@ class Filme_favoritoController extends Controller
         } else {
             $filme_favorito = Filme_favorito::latest()->paginate($perPage);
         }
-
-        return view('admin.filme_favorito.index', compact('filme_favorito'));
+        $pessoa = Pessoa::all();
+        return view('admin.filme_favorito.index', compact('filme_favorito'), ['pessoa'=>$pessoa]);
     }
 
     /**
@@ -40,7 +41,9 @@ class Filme_favoritoController extends Controller
      */
     public function create()
     {
-        return view('admin.filme_favorito.create');
+        $pessoas = Pessoa::pluck('nome', 'id')->toArray();
+
+        return view('admin.filme_favorito.create',  ['pessoas'=>$pessoas]);
     }
 
     /**
@@ -52,7 +55,6 @@ class Filme_favoritoController extends Controller
      */
     public function store(Request $request)
     {
-        
         $requestData = $request->all();
         
         Filme_favorito::create($requestData);
@@ -70,8 +72,8 @@ class Filme_favoritoController extends Controller
     public function show($id)
     {
         $filme_favorito = Filme_favorito::findOrFail($id);
-
-        return view('admin.filme_favorito.show', compact('filme_favorito'));
+        $pessoa = Pessoa::all();
+        return view('admin.filme_favorito.show', compact('filme_favorito'), ['pessoa'=>$pessoa]);
     }
 
     /**
@@ -85,7 +87,9 @@ class Filme_favoritoController extends Controller
     {
         $filme_favorito = Filme_favorito::findOrFail($id);
 
-        return view('admin.filme_favorito.edit', compact('filme_favorito'));
+        $pessoas = Pessoa::pluck('nome', 'id')->toArray();
+
+        return view('admin.filme_favorito.edit', compact('filme_favorito'),  ['pessoas'=>$pessoas]);
     }
 
     /**

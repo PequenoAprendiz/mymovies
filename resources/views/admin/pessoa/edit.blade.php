@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit Pessoa #{{ $pessoa->id }}</div>
+                    <div class="card-header">Editar dados {{ $pessoa->nome }}</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/pessoa') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />

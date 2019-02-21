@@ -25,6 +25,6 @@ class Endereco extends Model
      *
      * @var array
      */
-    protected $fillable = ['endereco', 'id_pessoa'];
+    protected $fillable = ['endereco', 'id_pessoa' ];
 
 }

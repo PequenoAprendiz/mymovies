@@ -13,10 +13,10 @@
     {!! Form::text('diretor', null,['class' => 'form-control', 'required' => 'required']) !!}
     {!! $errors->first('diretor', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('id_pessoa') ? 'has-error' : ''}}">
-    {!! Form::label('id_pessoa', 'Id Pessoa', ['class' => 'control-label']) !!}
-    {!! Form::number('id_pessoa', null, ['class' => 'form-control', 'required' => 'required']) !!}
-    {!! $errors->first('id_pessoa', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('pessoas') ? 'has-error' : ''}}">
+    {!! Form::label('Pessoa', 'Pessoa', ['class' => 'control-label']) !!}
+    {!! Form::select('id_pessoa', $pessoas, null,['class' => 'form-control', 'placeholder' => 'Escolha uma pessoa',  'required' => 'required']) !!}
+    {!! $errors->first('pessoas', '<p class="help-block">:message</p>') !!}
 </div>
 
 

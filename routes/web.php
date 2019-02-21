@@ -12,7 +12,7 @@
 */
 
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['middleware' => 'web'], function () {                             //filtro para acesso às rotas, variaveis de sessão
     Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index')->name('home');
     Auth::routes();

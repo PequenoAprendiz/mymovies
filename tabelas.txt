@@ -1,7 +1,7 @@
 php artisan crud:generate Pessoa --fields="nome#string; sobrenome#string;  titulacao#string;  cpf#number;  rg#string;  id_user#number;" --view-path=admin  --controller-namespace=Admin  --route-group=admin --form-helper=html --form-helper=laravelcollective
 
 
-php artisan crud:generate Endereco --fields="endereço#string; id_pessoa#number;" --foreign-keys="id_pessoa#id#Pessoa#cascade" --view-path=admin  --controller-namespace=Admin
+php artisan crud:generate Endereco --fields="endereço#string; nome_pessoa#number;" --foreign-keys="id_pessoa#id#Pessoa#cascade" --view-path=admin  --controller-namespace=Admin
 	"tive que alterar o o atributo que seria chave estrangeira, via model"
 
 
