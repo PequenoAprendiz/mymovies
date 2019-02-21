@@ -41,19 +41,19 @@ class PessoaController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'nome' => ['required', 'string', 'max:255'],
-            'sobrenome' => ['required', 'string', 'max:255'],
-            'titulacao' => ['required', 'string', 'max:255'],
-            'cpf' => ['required', 'integer', 'email', 'max:11', 'unique'],
-            'rg' => ['required', 'string', 'min:10', 'unique'],
-        ]);
-    }
+     *
+     * protected function validator(array $data)
+     * {
+     * return Validator::make($data, [
+     * 'nome' => ['required', 'string', 'max:255'],
+     * 'sobrenome' => ['required', 'string', 'max:255'],
+     * 'titulacao' => ['required', 'string', 'max:255'],
+     * 'cpf' => ['required', 'integer', 'email', 'max:11', 'unique'],
+     * 'rg' => ['required', 'string', 'min:10', 'unique'],
+     * ]);
+     * }*/
 
     /**
      * Show the form for creating a new resource.
@@ -74,36 +74,30 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nome'      => 'required',
-            'sobrenome' => 'required',
-            'titulacao' => 'required',
-            'cpf'       => 'required|min:11|max:11',
-            'rg'        => 'required|min:10|max:10'],
+        $this->validate($request, [                                           //validação simples para poder ganhar tempo na implementação
+            'cpf' => 'required|min:11|max:11',
+            'rg' => 'required|min:10|max:10'],
             [
-                'nome.required'      => 'Preencha o campo Nome',
-                'sobrenome.required' => 'Preencha o campo Sobrenome',
-                'titulacao.required' => 'Preencha o campo Titulação',
-                'cpf.required'       => 'Preencha o campo Cpf',
-                'cpf.min'            => 'Cpf deve conter 11 digitos',
-                'cpf.max'            => 'Cpf deve conter 11 digitos',
-                'rg.required'        => 'Preencha o campo Rg',
-                'rg.min'             => 'Rg deve conter 10 digitos',
-                'rg.max'             => 'Rg deve conter 10 digitos',
+                'cpf.required' => 'Preencha o campo Cpf',
+                'cpf.min' => 'Cpf deve conter 11 digitos',
+                'cpf.max' => 'Cpf deve conter 11 digitos',
+                'rg.required' => 'Preencha o campo Rg',
+                'rg.min' => 'Rg deve conter 10 digitos',
+                'rg.max' => 'Rg deve conter 10 digitos',
 
             ]);
         $requestData = $request->all();
-        
+
         Pessoa::create($requestData);
 
-        //Session::flash('mensagem_sucesso', 'Pessoa cadastrada com sucesso!');
+        //\Session::flash('mensagem_sucesso', 'Pessoa cadastrada com sucesso!');
         return redirect('admin/pessoa')->with('flash_message', 'Pessoa added!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\View\View
      */
@@ -117,7 +111,7 @@ class PessoaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\View\View
      */
@@ -132,25 +126,36 @@ class PessoaController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        
+        $this->validate($request, [                                           //validação simples na hora de atualizar para manter um padrão com o cadastro
+            'cpf' => 'required|min:11|max:11',
+            'rg' => 'required|min:10|max:10'],
+            [
+                'cpf.required' => 'Preencha o campo Cpf',
+                'cpf.min' => 'Cpf deve conter 11 digitos',
+                'cpf.max' => 'Cpf deve conter 11 digitos',
+                'rg.required' => 'Preencha o campo Rg',
+                'rg.min' => 'Rg deve conter 10 digitos',
+                'rg.max' => 'Rg deve conter 10 digitos',
+
+            ]);
         $requestData = $request->all();
-        
+
         $pessoa = Pessoa::findOrFail($id);
         $pessoa->update($requestData);
-
+        \Session::flash('mensagem_sucesso', 'Pessoa cadastrada com sucesso!');
         return redirect('admin/pessoa')->with('flash_message', 'Pessoa updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

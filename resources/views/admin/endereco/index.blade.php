@@ -16,7 +16,7 @@
 
                         {!! Form::open(['method' => 'GET', 'url' => '/admin/endereco', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
                         <div class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search..."
+                            <input type="text" class="form-control" name="search" placeholder="Endereço..."
                                    value="{{ request('search') }}">
                             <span class="input-group-append">
                                 <button class="btn btn-secondary" type="submit">

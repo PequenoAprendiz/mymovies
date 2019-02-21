@@ -27,3 +27,7 @@
 <div class="form-group">
     {!! Form::submit($formMode === 'edit' ? 'Update' : 'Create', ['class' => 'btn btn-primary']) !!}
 </div>
+
+@if(Session::has('mensagem_sucesso'))
+<div class="alert alert-sucess">{{session::get('mensagem_sucesso')}}</div>
+@endif

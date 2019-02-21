@@ -24,9 +24,7 @@
                                 @endforeach
                             </ul>
                         @endif
-                        {{--@if(Session::has('mensagem_sucesso'))--}}
-                            {{--<div class="alert alert-sucess">{{session::get('mensagem_sucesso')}}</div>--}}
-                        {{--@endif--}}
+
                         {!! Form::open(['url' => '/admin/pessoa', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                         @include ('admin.pessoa.form', ['formMode' => 'create'])

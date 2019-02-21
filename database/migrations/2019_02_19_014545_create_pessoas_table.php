@@ -18,7 +18,7 @@ class CreatePessoasTable extends Migration
             $table->string('nome')->nullable();
             $table->string('sobrenome')->nullable();
             $table->string('titulacao')->nullable();
-            $table->integer('cpf')->nullable();
+            $table->string('cpf')->nullable();
             $table->string('rg')->nullable();
             $table->integer('id_user')->nullable();
             });
