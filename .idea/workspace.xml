@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="163d3ca9-3ade-4880-8504-351001b866e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PessoaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PessoaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_19_014545_create_pessoas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_19_014545_create_pessoas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/endereco/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/endereco/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/filme_favorito/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/filme_favorito/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pessoa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pessoa/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pessoa/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pessoa/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sobre.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sobre.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelo de Entidade e Relacionamento.png" beforeDir="false" afterPath="$PROJECT_DIR$/mer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,23 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/CreateTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-              <folding>
-                <element signature="e#33#52#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Unit/ViewTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="572">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#33#52#0#PHP" expanded="true" />
               </folding>
@@ -48,13 +31,25 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="638">
+                <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_20_045117_create_enderecos_table.php">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="154">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding>
-                <element signature="e#7#52#0#PHP" expanded="true" />
+                <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,6 +111,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_02_19_014545_create_pessoas_table.php" />
         <option value="$PROJECT_DIR$/tests/Unit/ViewTest.php" />
         <option value="$PROJECT_DIR$/tests/Unit/CreateTest.php" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -226,7 +222,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -337,13 +333,51 @@
               <item name="mymovies" type="b2602c69:ProjectViewProjectNode" />
               <item name="mymovies" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Feature" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymovies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymovies" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="Unit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="mymovies" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="mymovies" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mymovies" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mymovies" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mymovies" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,11 +390,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\tests\Feature" />
       <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\tests\Unit" />
       <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\tests" />
       <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\resources\views\layouts" />
       <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\resources\views" />
-      <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\resources\views\admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Dinopc\Documents\laravel projects\mymovies\app\Providers" />
@@ -404,32 +438,13 @@
       <workItem from="1550710781954" duration="2287000" />
       <workItem from="1550722537171" duration="1069000" />
       <workItem from="1550749272932" duration="909000" />
-      <workItem from="1550750801015" duration="7323000" />
+      <workItem from="1550750801015" duration="7929000" />
+      <workItem from="1550915652497" duration="1008000" />
+      <workItem from="1551163414896" duration="2163000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_tests - 2019.02.21 at 10h 54m 03s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="All_tests - 2019.02.21 at 10h 54m 21s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="All_tests - 2019.02.21 at 10h 55m 29s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="All_tests - 2019.02.21 at 10h 56m 10s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="All_tests - 2019.02.21 at 11h 28m 41s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="All_tests - 2019.02.21 at 11h 29m 16s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="All_tests - 2019.02.21 at 11h 29m 56s.xml">
-      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="All_tests - 2019.02.21 at 11h 30m 42s.xml">
       <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -439,9 +454,30 @@
     <history-entry file="All_tests - 2019.02.21 at 11h 32m 30s.xml">
       <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="All_tests - 2019.02.21 at 11h 32m 49s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_tests - 2019.02.21 at 11h 33m 33s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_tests - 2019.02.21 at 11h 34m 31s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_tests - 2019.02.21 at 11h 35m 30s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_tests - 2019.02.21 at 11h 36m 10s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_tests - 2019.02.23 at 06h 59m 22s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_tests - 2019.02.23 at 06h 59m 58s.xml">
+      <configuration name="All tests" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72096000" />
+    <option name="totallyTimeSpent" value="75873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,7 +491,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15372169" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10194175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -464,7 +500,7 @@
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3298731" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.27450982" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.7416378" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -512,15 +548,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SobreController" />
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
@@ -739,13 +766,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/ExampleTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ExampleTest.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin/endereco/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -771,16 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,13 +839,7 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_20_045117_create_enderecos_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -845,23 +850,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/ViewTest.php">
+    <entry file="file://$PROJECT_DIR$/tests/Feature/CreateTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="484">
+          <caret line="22" column="5" lean-forward="true" selection-end-line="40" />
           <folding>
             <element signature="e#33#52#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/CreateTest.php">
+    <entry file="file://$PROJECT_DIR$/tests/Unit/ViewTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        <state relative-caret-position="572">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#33#52#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="638">
+            <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
